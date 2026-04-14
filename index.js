@@ -11,6 +11,7 @@ dotenv.config()
 import { userAuth } from './Middlewares/userAuth.js';
 import cors from 'cors'
 
+const PORT= process.env.PORT;
 
 app.use(cors({
     origin: ['http://localhost:5173','https://taskflow-todos.netlify.app'],
@@ -18,6 +19,18 @@ app.use(cors({
 }))
 
 app.use(express.json())
+
+
+app.get('/health', (req, res)=>{
+
+  res.status(200).json({
+    status: "ok",
+    uptime: process.uptime(),
+    timestamp: new Date(),
+  });
+
+})
+
 
 app.post('/signup',async function(req,res){
 
@@ -232,5 +245,7 @@ res.json({
 
 
 
-app.listen(process.env.PORT)
+app.listen(PORT, ()=>{
+    console.log(`Server is listening on ${PORT}`);
+})
  
