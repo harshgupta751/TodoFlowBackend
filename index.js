@@ -24,7 +24,7 @@ app.use(express.json())
 app.get('/health', (req, res)=>{
 
   res.status(200).json({
-    status: "Harsh Gupta--Full Stack Developer",
+    status: "ok",
     uptime: process.uptime(),
     timestamp: new Date(),
   });
