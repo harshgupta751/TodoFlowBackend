@@ -249,10 +249,3 @@ app.listen(PORT, ()=>{
     console.log(`Server is listening on ${PORT}`);
 })
  
-// hello from harsh
-
-
-//ndjngj
-
-// comment added by Harsh Gupta
-//kfvfjvn
